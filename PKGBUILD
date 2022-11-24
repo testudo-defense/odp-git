@@ -9,13 +9,16 @@ depends=('git' 'automake' 'libtool' 'pkgconf')
 provides=("$pkgname=$pkgver")
 conflicts=("$pkgname")
 replaces=("$pkgname")
-source=("git+https://github.com/OpenDataPlane/odp#$pkgver"
+source=("git+https://github.com/OpenDataPlane/odp"
         'https://raw.githubusercontent.com/testudo-defense/odp-git/master/initialize_odp_u128_t.diff')
 md5sums=('SKIP'
-         'e13b419f66004944fed8ddd03f853870')
+         'f2b775671e324dd81b4adc2d21671aee')
 
 prepare() {
-  echo todo finish
+  echo todo finish $PWD
+  cd odp
+  git checkout "$pkgver"
+  patch -p0 < ../initialize_odp_u128_t.diff
 }
 
 #build(){
