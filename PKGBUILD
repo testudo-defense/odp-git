@@ -15,29 +15,19 @@ md5sums=('SKIP'
          'f2b775671e324dd81b4adc2d21671aee')
 
 prepare() {
-  echo todo finish $PWD
   cd odp
   git checkout "$pkgver"
   patch -p0 < ../initialize_odp_u128_t.diff
+  ./bootstrap
 }
 
-#build(){
-#   patch -p0 < sockets_fix.diff
-#   cd "$srcdir/lwipv6-${pkgver}"
-#   autoreconf -i
-#   if [ "$CARCH" == "x86_64" ]; then
-#      ./configure --prefix="${pkgdir}/usr" --disable-static
-#   else
-#      ./configure --prefix="${pkgdir}/usr" --libdir="${pkgdir}/usr/lib32" --disable-static
-#   fi
-#   make
-#}
+build(){
+  cd odp
+  ./configure --prefix=/usr
+  make
+}
 
-#package() {
-#   mkdir -p ${pkgdir}/usr/share
-#   tar -xf data.tar.gz
-#   cp -r usr/share ${pkgdir}/usr/
-#   cd "$srcdir/lwipv6-${pkgver}"
-#   make install &> /dev/null
-#   rm -rf ${pkgdir}/usr/include
-#}
+package() {
+  cd odp
+  make DESTDIR="$pkgdir/" install
+}
