@@ -3,7 +3,7 @@ pkgver=v1.35.0.0
 pkgrel=1
 pkgdesc="The ODP project is an open-source, cross-platform set of application programming interfaces (APIs) for the networking data plane"
 arch=('i686' 'x86_64')
-url=""
+url="https://github.com/OpenDataPlane/odp"
 license=('BSD')
 depends=('git' 'automake' 'libtool' 'pkgconf')
 provides=("$pkgname=$pkgver")
