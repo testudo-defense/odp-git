@@ -10,9 +10,9 @@ provides=("$pkgname=$pkgver")
 conflicts=("$pkgname")
 replaces=("$pkgname")
 source=("git+https://github.com/OpenDataPlane/odp#$pkgver"
-        '')
+        'https://raw.githubusercontent.com/testudo-defense/odp-git/master/initialize_odp_u128_t.diff')
 md5sums=('SKIP'
-         '')
+         'e13b419f66004944fed8ddd03f853870')
 
 prepare() {
   echo todo finish
