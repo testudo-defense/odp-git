@@ -15,7 +15,7 @@ md5sums=('SKIP'
          '')
 
 prepare() {
-  
+  echo todo finish
 }
 
 #build(){
