@@ -1,11 +1,11 @@
 pkgname=odp-git
 pkgver=v1.35.0.0
-pkgrel=3
+pkgrel=4
 pkgdesc="The ODP project is an open-source, cross-platform set of application programming interfaces (APIs) for the networking data plane"
 arch=('i686' 'x86_64')
 url="https://github.com/OpenDataPlane/odp"
 license=('BSD')
-depends=('git' 'automake' 'libtool' 'pkgconf' 'libconfig' 'patch')
+depends=('git' 'automake' 'libtool' 'pkgconf' 'libconfig' 'patch' 'autoconf')
 provides=("$pkgname=$pkgver")
 conflicts=("$pkgname")
 replaces=("$pkgname")
